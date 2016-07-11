@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+	font-family:opensans;
+	src:url(../font/OpenSans-Regular.ttf);	
+}
+
+body {
+	font-family:opensans;	
+}
+
+#wrapper {
+	width:320px;
+	height:530px;
+	margin:auto;
+	/*background: linear-gradient(135deg, #ED7376, #ED9074, #EDAF74, #EDCD74, #F3E995);*/
+}
+
+	#wrapper #question {
+		width:100%;
+		height:180px;
+		line-height:35px;
+		text-align:center;
+		color:#FFF;
+		font-size:15px;
+		background: #848566;
+	}
+	
+		#wrapper #question:after {
+			height:10px;
+			width:320px;
+			margin:auto;
+			display:block;
+			position:absolute;
+			left:0;
+			right:0;
+			top:185px;
+			content:"";
+			background: linear-gradient(45deg, transparent 33.333%, #848566 33.333%, #848566 66.667%, transparent 33.333%),
+						linear-gradient(-45deg, transparent 33.333%, #848566 33.333%, #848566 66.667%, transparent 33.333%);
+			background-size: 8px 20px; /* this shit */
+        	background-position: 0 -10px; /* and this shit must be below background: linear gradient */
+		}
+	
+		#wrapper #question input[type=text] {
+			border:none;
+			border-bottom:#FDFDD7 solid 1px;
+			color:#FDFDD7;
+			background:none;
+			width:80%;
+			margin:auto;
+		}
+		
+		#wrapper #question ::-webkit-input-placeholder {
+			color:#FDFDD7;	
+		}
+	
+	#wrapper #answer {
+		width:100%;
+		height:300px;
+		color:#FFF;
+		font-size:15px;
+		line-height:35px;
+		background: #FDFDD7;
+		color: #848566;
+	}
+	
+		#wrapper #answer #option {
+			width:100%;
+			height:75px;
+			transition: 0.5s linear;
+			display:inline-block;
+			text-align:center;
+		}
+		
+			#wrapper #answer #option:hover {
+				color: #FDFDD7;
+				background: #848566;
+				cursor:pointer;
+			}
+			
+		#wrapper #answer input[type=text] {
+			border:none;
+			border-bottom:#848566 solid 1px;
+			color:#848566;
+			background:none;
+			width:80%;
+			margin:auto;	
+		}
+		
+		#wrapper #answer ::-webkit-input-placeholder {
+			color:#848566;
+		}
+			
+	#toolbar {
+		width:100%;
+		height:50px;
+		background: #E24830; /*#594731*/
+		text-align:center;
+		color:#FFF;
+		font-size:20px;
+		line-height:50px;
+	}
+	
+		#toolbar:before {
+			content:"";
+			height:10px;
+			width:320px;
+			margin:auto;
+			display:block;
+			position:absolute;
+			left:0;
+			right:0;	
+			top:480px;
+			background: linear-gradient(45deg, transparent 33.333%, #E24830 33.333%, #E24830 66.667%, transparent 33.333%),
+						linear-gradient(-45deg, transparent 33.333%, #E24830 33.333%, #E24830 66.667%, transparent 33.333%);
+			background-size: 8px 20px; /* this shit */
+        	background-position: 0 0px; /* and this shit must be below background: linear gradient */
+		}
+		
+		#toolbar #menu-wrapper {
+		  width: 60px;
+		  height: 25px;
+		  transform: rotate(0deg);
+		  transition: .25s ease-in-out;
+		  cursor: pointer;
+		  float:left;
+		  margin-top:10px;
+		  margin-left:5px;
+		}
+
+			#toolbar #menu-wrapper span {
+				width: 50%;
+				height: 5px;
+				border-radius: 5px;
+				position: absolute;
+				display: block;
+				left: 0;
+				opacity: 1;
+				background: #FFF;
+				transform: rotate(0deg);
+				transition: .25s ease-in-out;
+			  }
+	
+			#toolbar #menu-wrapper span:nth-child(1) {
+				top: 0px;
+				transform-origin: left center;
+			}
+	
+			#toolbar #menu-wrapper span:nth-child(2) {
+				top: 10px;
+				transform-origin: left center;
+			  }
+	
+			#toolbar #menu-wrapper span:nth-child(3) {
+				top: 20px;
+				transform-origin: left center;
+			  }
+	
+			#toolbar #menu-wrapper.open span:nth-child(1) {
+				transform: rotate(45deg);
+				top: -1px;
+				left: 3px;
+			  }
+	
+			#toolbar #menu-wrapper.open span:nth-child(2) {
+				width: 0%;
+				opacity: 0;
+			  }
+	
+			#toolbar #menu-wrapper.open span:nth-child(3) {
+				transform: rotate(-45deg);
+				top: 20px;
+				left: 3px;
+			  }
+			  
+		#toolbar #spin-wrapper {
+		  height: 50px;
+		  width: 200px;
+		  float:left;
+		}
+			@keyframes spin {
+				0% {transform:rotate(0deg);}
+				100% {transform: rotate(360deg);}
+			  }
+			#toolbar #spin-wrapper #half-circle {
+				margin:auto;
+				margin-top:4px;
+				height: 15px;
+				width: 30px;
+				line-height:15px;
+				font-size:12px;
+				border: 5px solid #FFF;
+				border-bottom: 0;
+				border-radius: 20px 20px 0 0;
+				transform-origin: 50% 100%;
+				animation: spin 1s 10;
+			  }  
+		  

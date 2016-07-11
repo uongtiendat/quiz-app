@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="../css/addquestion-style.css" type="text/css" rel="stylesheet" />
+<script src="../js/angular.min.js" type="text/javascript"></script>
+<script src="../js/addquestion-script.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div id="wrapper" ng-app="quizApp" ng-controller="contentLoader">
+    	<form method="post" action="../data/process.php">
+    	<div id="question">
+        	<div><input type="text" name="question" placeholder="Question . . ." /></div>
+        </div>
+        <div id="answer">
+        	<div id="option">
+            	<input type="text" name="correctanswer" placeholder="Correct Answer . . ." />
+            </div>
+            <div id="option">
+                <input type="text" name="answera" placeholder="Answer 1. . ." />
+            </div>
+            <div id="option">
+                <input type="text" name="answerb" placeholder="Answer 2 . . ." />
+            </div>
+            <div id="option">
+                <input type="text" name="answerc" placeholder="Answer 3 . . ." />
+            </div>
+        </div>
+        <div id="toolbar">
+        	<input type="submit" value="DONE!!!" name="add" />
+        </div>
+        </form>
+    </div>
+</body>
+</html>

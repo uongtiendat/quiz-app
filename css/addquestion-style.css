@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+	font-family:opensans;
+	src:url(../font/OpenSans-Regular.ttf);	
+}
+
+body {
+	font-family:opensans;	
+}
+
+#wrapper {
+	width:320px;
+	height:530px;
+	margin:auto;
+	/*background: linear-gradient(135deg, #ED7376, #ED9074, #EDAF74, #EDCD74, #F3E995);*/
+}
+
+	#wrapper #question {
+		width:100%;
+		height:180px;
+		line-height:180px;
+		text-align:center;
+		color:#FFF;
+		font-size:15px;
+		background: #848566;
+	}
+	
+		#wrapper #question:after {
+			height:10px;
+			width:320px;
+			margin:auto;
+			display:block;
+			position:absolute;
+			left:0;
+			right:0;
+			top:185px;
+			content:"";
+			background: linear-gradient(45deg, transparent 33.333%, #848566 33.333%, #848566 66.667%, transparent 33.333%),
+						linear-gradient(-45deg, transparent 33.333%, #848566 33.333%, #848566 66.667%, transparent 33.333%);
+			background-size: 8px 20px; /* this shit */
+        	background-position: 0 -10px; /* and this shit must be below background: linear gradient */
+		}
+	
+		#wrapper #question input[type=text] {
+			border:none;
+			border-bottom:#FDFDD7 solid 1px;
+			color:#FDFDD7;
+			background:none;
+			width:80%;
+			padding-top:25%;
+			margin:auto;
+		}
+		
+		#wrapper #question ::-webkit-input-placeholder {
+			color:#FDFDD7;	
+		}
+	
+	#wrapper #answer {
+		width:100%;
+		height:300px;
+		color:#FFF;
+		font-size:15px;
+		background: #FDFDD7;
+		color: #848566;
+	}
+	
+		#wrapper #answer #option {
+			width:100%;
+			height:75px;
+			line-height:75px;
+			transition: 0.5s linear;
+			display:inline-block;
+			text-align:center;
+		}
+			
+		#wrapper #answer input[type=text] {
+			border:none;
+			border-bottom:#848566 solid 1px;
+			color:#848566;
+			background:none;
+			width:80%;
+			height:50%;
+			margin:auto;	
+		}
+		
+		#wrapper #answer ::-webkit-input-placeholder {
+			color:#848566;
+		}
+			
+	#toolbar {
+		width:100%;
+		height:50px;
+		background: #E24830; /*#594731*/
+		text-align:center;
+		color:#FFF;
+		font-size:20px;
+		line-height:50px;
+	}
+	
+		#toolbar:before {
+			content:"";
+			height:10px;
+			width:320px;
+			margin:auto;
+			display:block;
+			position:absolute;
+			left:0;
+			right:0;	
+			top:480px;
+			background: linear-gradient(45deg, transparent 33.333%, #E24830 33.333%, #E24830 66.667%, transparent 33.333%),
+						linear-gradient(-45deg, transparent 33.333%, #E24830 33.333%, #E24830 66.667%, transparent 33.333%);
+			background-size: 8px 20px; /* this shit */
+        	background-position: 0 0px; /* and this shit must be below background: linear gradient */
+		}
