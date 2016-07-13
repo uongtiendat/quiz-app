@@ -19,9 +19,11 @@
 		//echo ($outp);*/
 			//$outp[] = $row;
 			if( strcmp($answer,$row[answer]) == 0) {
-				echo json_encode('✔');	
+				//echo json_encode('✔');	
+				echo json_encode('true');
 			}
-			else echo json_encode('X');
+			//else echo json_encode('X');
+			else echo json_encode('false');
 		}
 		//echo json_encode($outp);
 	};

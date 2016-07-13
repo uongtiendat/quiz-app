@@ -10,6 +10,45 @@ body {
 	font-family:opensans;	
 }
 
+#overlay-wrapper {
+	width:320px;
+	height:530px;
+	background:#FDFDD7;
+	opacity: 1;
+	position:absolute;
+	left:50%;
+	margin-left:-160px;
+	z-index:9999;
+}
+
+	#overlay-wrapper div {
+		display:block;
+		width:100px;
+		height:50px;
+		border: 1px solid #848566;
+		background:	#FDFDD7;
+		color: #848566;
+		text-align:center;
+		line-height:50px;
+		position:absolute;
+		top:50%;
+		margin-top:-50px;
+		left:50%;
+		margin-left:-50px;
+		transition: .25s ease-in-out;
+	}
+	
+		#overlay-wrapper div:hover {
+			background: #848566;
+			color: #FDFDD7;
+			cursor:pointer;
+		}
+		
+		#overlay-wrapper.close {
+			opacity: 0;
+			top: 550px;	
+		}
+
 #wrapper {
 	width:320px;
 	height:530px;
@@ -78,6 +117,16 @@ body {
 				color: #FDFDD7;
 				background: #848566;
 				cursor:pointer;
+			}
+			
+			#wrapper #answer #option.correct {
+				color: #FFF;
+				background: #BEEE3B;
+			}
+			
+			#wrapper #answer #option.wrong {
+				color: #FFF;
+				background: #EE47FC;
 			}
 			
 		#wrapper #answer input[type=text] {
@@ -195,6 +244,107 @@ body {
 				border-bottom: 0;
 				border-radius: 20px 20px 0 0;
 				transform-origin: 50% 100%;
-				animation: spin 1s 10;
 			  }  
-		  
+				  #toolbar #spin-wrapper #half-circle.spin {
+					  animation: spin 1s 10;
+				  }
+				  
+		#toolbar #nextbtn {
+			color: #FFF;
+			font-size:30px;
+			font-weight:bolder;
+		}
+		
+			#toolbar #nextbtn:hover {
+				cursor: pointer;	
+			}
+
+	#wrapper #overlay-slidein {
+		position: absolute;
+		  opacity: 0;
+		  width: 320px;
+		  height: 200px;
+		  top: 530px;
+		  background: #2B3A48;
+		  transition: .25s ease-in-out;
+		  z-index:10005;
+		  color:#FFF;
+		  text-align:center;
+	}
+	
+		#wrapper #overlay-slidein.open {
+			top: 280px;
+			opacity: 1;	
+		}
+		
+		#wrapper #overlay-slidein div {
+			width: 320px;
+			height:	50px;
+			line-height:50px;
+		}
+		
+			#wrapper #overlay-slidein div:hover {
+				background: #FFF;
+				color: #2B3A48;
+				cursor:pointer;	
+			}
+			
+			#wrapper #overlay-slidein div a {
+				color: #FFF;
+				text-decoration:none;
+				display:block;
+			}
+			
+			#wrapper #overlay-slidein div a:hover {
+				color: #2B3A48;	
+			}
+		
+#overlay-gameover {
+	width:320px;
+	height:530px;
+	background:#000;
+	opacity: 0;
+	background:rgba(0, 0, 0, 0);
+	position:absolute;
+	z-index:100000;
+	top:8px;	
+}
+
+	#overlay-gameover.over {
+		opacity: 1;
+		background:rgba(0, 0, 0, 0.8);
+		left:50%;
+		margin-left:-160px;	
+	}
+	
+		#overlay-gameover.over div {
+			display:block;
+			width:110px;
+			height:50px;
+			background:	#FDFDD7;
+			color: #848566;
+			text-align:center;
+			line-height:50px;
+			position:absolute;
+			top:50%;
+			margin-top:-50px;
+			left:50%;
+			margin-left:-50px;
+			transition: .25s ease-in-out;
+		}
+		
+		#overlay-gameover.over div:after {
+			content: "GAME OVER !!!";
+		}
+		
+		#overlay-gameover.over:hover div:after {
+			content: "TRY AGAIN";
+			cursor:pointer;	
+		}
+		
+	#overlay-gameover.next {
+		left:50%;
+		margin-left:-160px;	
+		height: 480px;
+		z-index:10000;
+	}
